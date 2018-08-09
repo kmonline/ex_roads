@@ -54,7 +54,7 @@ defmodule GoogleRoads.MixProject do
   defp docs do
     [
       main: "GoogleRoads",
-      extras: ~w(README* LICENSE*)
+      extras: ~w(README.md)
     ]
   end
 end
