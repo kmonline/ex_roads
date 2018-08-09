@@ -6,13 +6,14 @@ Elixir wrapper for Google Roads API based in [sntran/ex_maps](https://github.com
 [![Hex Version](https://img.shields.io/hexpm/v/google_roads.svg)](https://hex.pm/packages/google_roads)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-- [ ] [Snap to roads](https://developers.google.com/maps/documentation/roads/snap) - Best-fit road geometry for a given set of GPS coordinates
+- [x] [Snap to roads](https://developers.google.com/maps/documentation/roads/snap) - Best-fit road geometry for a given set of GPS coordinates
 - [ ] [Nearest roads](https://developers.google.com/maps/documentation/roads/nearest) - Closest road segment for a given set of GPS coordinates
 - [ ] [Speed limits](https://developers.google.com/maps/documentation/roads/speed-limits) - Posted speed limit for a given road segment
 
 ## Methods
 
-- WIP
+- `snap_to_roads/3`
+- `get/2`
 
 ## Development
 
@@ -24,6 +25,15 @@ Then run tests:
 `mix deps.get test`
 
 `mix test`
+
+### Setup credentials
+
+In your `config/config.exs`:
+
+```elixir
+config :google_roads,
+  api_key: "your_api_key"
+```
 
 ## Installation
 
