@@ -12,5 +12,6 @@ defmodule GoogleRoads.Response do
     wrap({:ok, %{response | body: Jason.decode!(body)}})
   end
   def wrap({:ok, %{body: body}}), do: {:ok, body}
+  def wrap({:ok, %{id: id}}), do: {:ok, id}
   def wrap({:error, %{reason: reason}}), do: {:error, reason}
 end
