@@ -56,7 +56,7 @@ defmodule GoogleRoads do
       iex> status
       "INVALID_ARGUMENT"
       iex> error_message
-      "The provided API key is invalid."
+      "API key not valid. Please pass a valid API key."
 
       iex> {:ok, result} = GoogleRoads.snap_to_roads("-35.27801,149.12958|-35.28032,149.12907|-35.28099,149.12929", true)
       iex> match?(%{"snappedPoints" => _}, result)
@@ -95,7 +95,7 @@ defmodule GoogleRoads do
       iex> status
       "INVALID_ARGUMENT"
       iex> error_message
-      "The provided API key is invalid."
+      "API key not valid. Please pass a valid API key."
 
       iex> {:ok, result} = GoogleRoads.get("snapToRoads", [
       ...>   path: "-35.27801,149.12958|-35.28032,149.12907|-35.28099,149.12929",
