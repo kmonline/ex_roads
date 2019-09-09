@@ -7,8 +7,9 @@ defmodule GoogleRoads do
   `options` keyword list.
 
   The `options` keyword can also take special entry for `headers` and
-  `options`, which are passed to the underlying `Request`. See the
-  documentation of `HTTPoison` for details.
+  `options`, which are passed to the underlying `Request`. Basic examples
+  of this are provided below for the `snap_to_roads/3` and `get/2` functions.
+  See the documentation of `HTTPoison` for possible options and more details.
   """
 
   alias GoogleRoads.{Request, Response}
@@ -56,7 +57,12 @@ defmodule GoogleRoads do
       iex> status
       "INVALID_ARGUMENT"
       iex> error_message
-      "The provided API key is invalid."
+      "API key not valid. Please pass a valid API key."
+
+      # Passing HTTPoison options to conduct an asynchronous request
+      iex> {:ok, result} = GoogleRoads.snap_to_roads("-37.78926|145.29083,-37.78939|145.29189,-37.78914|145.29193,-37.78865|145.29203,-37.78786|145.29219,-37.78787|145.29246,-37.78784|145.2927", true, options: [stream_to: self()])
+      iex> Kernel.is_reference(result)
+      true
 
       iex> {:ok, result} = GoogleRoads.snap_to_roads("-35.27801,149.12958|-35.28032,149.12907|-35.28099,149.12929", true)
       iex> match?(%{"snappedPoints" => _}, result)
@@ -95,7 +101,7 @@ defmodule GoogleRoads do
       iex> status
       "INVALID_ARGUMENT"
       iex> error_message
-      "The provided API key is invalid."
+      "API key not valid. Please pass a valid API key."
 
       iex> {:ok, result} = GoogleRoads.get("snapToRoads", [
       ...>   path: "-35.27801,149.12958|-35.28032,149.12907|-35.28099,149.12929",
