@@ -16,7 +16,7 @@ defmodule GoogleRoads.MixProject do
 
       # Docs
       name: "GoogleRoads",
-      source_url: "https://github.com/kmonline/ex_roads",
+      source_url: "https://github.com/wevtimoteo/ex_roads",
       homepage_url: "https://hex.pm/packages/google_roads/",
       docs: docs()
     ]
@@ -47,7 +47,7 @@ defmodule GoogleRoads.MixProject do
       files: ~w(lib mix.exs README* LICENSE* VERSION),
       maintainers: ["Weverton Timoteo", "Leandro Heuert"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/kmonline/ex_roads"}
+      links: %{"GitHub" => "https://github.com/wevtimoteo/ex_roads"}
     ]
   end
 
